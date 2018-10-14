@@ -20,9 +20,9 @@ namespace ConsoleRunner
 
             string tradeLoaderString  = ConfigReader.GetConfig("Plugins").TradeLoader;
             string tradeConsumerString = ConfigReader.GetConfig("Plugins").TradeConsumer;
-            var loader = DILoader.GetType<ILoader>(tradeLoaderString);
+            var loader = DiLoader.GetType<ILoader>(tradeLoaderString);
             var consumers = new List<IConsumer>();
-            for (var i = 0; i < 5; i++) consumers.Add(DILoader.GetType<IConsumer>(tradeConsumerString));
+            for (var i = 0; i < 5; i++) consumers.Add(DiLoader.GetType<IConsumer>(tradeConsumerString));
             var processor = new MultiTradeProcessor(queue, consumers);
             processor.Start();
             var readKey = ' ';

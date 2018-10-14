@@ -14,17 +14,11 @@ namespace CSTest.Shared.Config
         {
             LoadConfigurationFromConfigFile(configurationName);
         }
-        public int Count
-        {
-            get
-            {
-                return _dictionary.Count;
-            }
-        }
+        public int Count => _dictionary.Count;
+
         private void LoadConfigurationFromConfigFile(string configurationName)
         {
-            var section = ConfigurationManager.GetSection(configurationName) as NameValueCollection;
-            if (section == null) return;
+            if (!(ConfigurationManager.GetSection(configurationName) is NameValueCollection section)) return;
             foreach (var key  in section.AllKeys)
             {
                 _dictionary[key] = section[key];

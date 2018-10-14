@@ -4,12 +4,12 @@ using System.Reflection;
 
 namespace ConsoleRunner
 {
-    public class DILoader
+    public class DiLoader
     {
         private static Assembly _tradeLoaderAssembly;
         private static readonly string LocalPath;
 
-        static DILoader()
+        static DiLoader()
         {
             LocalPath = AppDomain.CurrentDomain.BaseDirectory;
         }
