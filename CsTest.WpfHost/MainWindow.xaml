@@ -4,7 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CsTest.WpfHost"
-        xmlns:Model="clr-namespace:CSTest.Shared.Model;assembly=CSTest.Shared" x:Class="CsTest.WpfHost.MainWindow"
+        xmlns:Model="clr-namespace:CSTest.Shared.Model;assembly=CSTest.Shared"
+        xmlns:viewModel="clr-namespace:CsTest.WpfHost.ViewModel"
+        x:Class="CsTest.WpfHost.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -15,7 +17,7 @@
 
         <DataGrid Grid.Row="0" x:Name="Tickers">
             <DataGrid.DataContext>
-                <Model:GridModel/>
+                <viewModel:GridModel/>
             </DataGrid.DataContext>
         </DataGrid>
         <Button Grid.Row="1" Content="Stop"/>

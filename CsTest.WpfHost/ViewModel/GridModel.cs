@@ -2,9 +2,10 @@
 using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
+using CSTest.Shared.Model;
 using CSTest.Shared.UIHelper;
 
-namespace CSTest.Shared.Model
+namespace CsTest.WpfHost.ViewModel
 {
     public class GridModel
 
@@ -43,7 +44,9 @@ namespace CSTest.Shared.Model
             while (!StopFlag)
 
             {
-                Execute.OnUiThread(UpdateTradeList);
+              //  Execute.OnUiThread(UpdateTradeList);
+                UpdateTradeList();
+
                 Thread.Sleep(100);
             }
         }

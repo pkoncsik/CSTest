@@ -49,7 +49,6 @@
     <Compile Include="Interfaces\IConsumer.cs" />
     <Compile Include="Interfaces\ILoader.cs" />
     <Compile Include="Interfaces\IQueue.cs" />
-    <Compile Include="Model\GridModel.cs" />
     <Compile Include="Model\Trade.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIHelper\Execute.cs" />

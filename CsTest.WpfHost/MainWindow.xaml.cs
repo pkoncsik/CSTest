@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using CsTest.WpfHost.ViewModel;
 using CSTest.Shared.Model;
 
 namespace CsTest.WpfHost

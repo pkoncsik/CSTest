@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace CSTest.Shared.Model
 {
@@ -10,11 +12,11 @@ namespace CSTest.Shared.Model
 
         public double Price
         {
-            get { return _price; }
+            get => _price;
             set
             {
                 _price = value;
-                RaisePropertyChanged("Price");
+                NotifyPropertyChanged();
 
             }
         }
@@ -31,28 +33,13 @@ namespace CSTest.Shared.Model
         /// Occurs when a property value changes.
         /// </summary> 
 
-
-        protected void OnPropertyChanged(PropertyChangedEventArgs e)
-
+        private void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
-
-            var changed = PropertyChanged;
-            if (changed != null) changed(this, e);
-
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        /// <summary>
-        /// Occurs when a property value changes.
-        /// </summary>
-        /// <param name="propertyName">The property that has a new value. </param> 
 
-        protected virtual void RaisePropertyChanged(string propertyName)
 
-        {
-
-            OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
-
-        }
 
         public override string ToString()
         {
